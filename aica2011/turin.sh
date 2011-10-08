@@ -6,6 +6,7 @@ bunzip2 -c turin.json.bz2 > turin.json
 ./hist_stats.py turin.json > table.tex
 
 ./hist_plot.py -C \
+  -D '/AS30722 Vodafone N.V./speedtest/latency' \
   -D '/AS1267 Infostrada S.p.A./speedtest/latency' \
   -D '/AS12874 Fastweb SpA/speedtest/latency' \
   -D '/AS3269 Telecom Italia S.p.a./speedtest/latency' \
@@ -16,6 +17,7 @@ bunzip2 -c turin.json.bz2 > turin.json
   turin.json
 
 ./hist_plot.py -C \
+  -D '/AS30722 Vodafone N.V./speedtest/download_speed' \
   -D '/AS1267 Infostrada S.p.A./speedtest/download_speed' \
   -D '/AS12874 Fastweb SpA/speedtest/download_speed' \
   -D '/AS3269 Telecom Italia S.p.a./speedtest/download_speed' \
@@ -26,10 +28,11 @@ bunzip2 -c turin.json.bz2 > turin.json
   turin.json
 
 ./hist_plot.py -C \
+  -D '/AS30722 Vodafone N.V./speedtest/download_wnd' \
   -D '/AS1267 Infostrada S.p.A./speedtest/download_wnd' \
   -D '/AS12874 Fastweb SpA/speedtest/download_wnd' \
   -D '/AS3269 Telecom Italia S.p.a./speedtest/download_wnd' \
-  -F KBytes -L 0 -N -n 10000 -S -U 256 \
+  -F KBytes -L 0 -N -n 10000 -S -U 300 \
   -T 'Cumulative bandwidth-delay product distribution' \
   -Y Frequency -X 'Bandwidth-delay product [KBytes]' \
   -o turin-bdp.pdf \
